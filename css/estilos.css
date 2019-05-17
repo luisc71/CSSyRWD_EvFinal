@@ -14,6 +14,7 @@ body{
   color: #ffffff;
   display: flex;
   flex-direction: row;
+  animation: moverHeader 2s;
 }
 #cabecera > div {
   width: 50%;
@@ -21,9 +22,10 @@ body{
 #titulo {
   padding: 0px 10px 0px 10px;
   text-align: left;
+  text-shadow: 2px 2px 2px #02010a;
 }
 #menu {
-  padding: 20px 10px 20px 10px;
+  padding: 25px 10px 25px 10px;
   text-align: right;
 }
 #menu a {
@@ -32,6 +34,96 @@ body{
   font-size: 1.7em;
   color: #ffffff;
   text-decoration: none;
+}
+.contenido {
+  display: flex;
+  flex-direction: column;
+}
+#img-central {
+  padding: 20px;
+  text-align: center;
+  background-color: #82c3a6;
+}
+#img-central img {
+  width: 50%;
+}
+#img-secundaria {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.7em;
+}
+#img-secundaria div {
+  padding: 20px;
+  width: 50%;
+  text-align: center;
+  background-color: #d5c75f;
+}
+#img-secundaria img {
+  margin-top: 10px;
+  width: 65%;
+}
+#img-secundaria p {
+  margin: 0px;
+  padding: 0px;
+}
+#img-psj:hover {
+  animation: efectoRotar 2s;
+  border: 2px solid;
+  box-shadow: 2px 2px 2px #82c3a6;
+}
+#img-ret:hover {
+  animation: efectoMover 2s;
+  border: 2px solid;
+  box-shadow: 2px 2px 2px #82c3a6;
+}
+.contenedor {
+  display: flex;
+  flex-direction: row;
+}
+.contenedor > div {
+  padding: 20px;
+  width: 33.3%;
+  background-color: #d5c75f;
+  text-align: center;
+}
+.contenedor img {
+  width: 100%;
+}
+#img1 {
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+}
+#img2, #img4, #img6 {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+#img3 {
+  -webkit-filter: sepia(90%);
+  filter: sepia(90%);
+}
+footer {
+  border-top: 1px solid;
+  border-radius: 0px 0px 10px 10px;
+  display: flex;
+  flex-direction: row;
+  background-color: #C6d5c5;
+  color: #000000;
+}
+footer div {
+  padding-left: 15px;
+  width: 25%;
+}
+footer div ul {
+  padding: 0px;
+  list-style: none;
+  font-size: 1.3em;
+}
+footer div p {
+  font-size: 1.2em;
+}
+footer div a {
+  text-decoration: none;
+  font-size: 1.2em;
 }
 
 @media screen and (max-width: 900px) {
@@ -52,4 +144,43 @@ body{
   #menu {
     text-align: center;
   }
+  #img-secundaria {
+    display: flex;
+    flex-direction: column;
+  }
+  #img-secundaria div {
+    width: 100%;
+  }
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+  }
+  .contenedor > div {
+    padding: 20px;
+    width: 100%;
+  }
+  .contenedor img {
+    width: 95%;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
+  footer div {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes efectoRotar {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(10deg);}
+}
+@-webkit-keyframes efectoMover {
+  from {transform: translateY(-5px);}
+  to {transform: translateX(20px);}
+}
+@-webkit-keyframes moverHeader {
+  0% {margin-top: 150%;}
+  60% {margin-top: -5%;}
+  100% {margin-top: 0%;}
 }
